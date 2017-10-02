@@ -1,0 +1,26 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	int res = 1;
+	string word;
+	getline(cin, word);
+	int len = word.length();
+	
+	//for (int i = 0; word[i] != 0; ++i) { a = i + 1; }
+	for (int i = 0; i < len / 2; ++i)
+	{
+		if (isupper(word[i])) { word[i] = tolower(word[i]);}
+		if (isupper(word[len-i])) { word[len-i] = tolower(word[len-i]);}
+		if (isspace(word[i])) { delete word[i]; }
+		if (word[i] != word[len - i - 1])
+		{
+			res = 0;
+		}
+		cout << res;
+	}
+    return 0;
+}
