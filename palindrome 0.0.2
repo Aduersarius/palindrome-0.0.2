@@ -9,13 +9,12 @@ int main()
 	getline(cin, word);
 	int len = word.length();
 	for (int i = 0; i < len; ++i) {
-		if (isalnum(word[i])) { word[i] = eword[i]; }
+		if (isalpha(word[i])) { eword += tolower(word[i]); }
 	}
 	len = eword.length();
 	for (int i = 0; i < len / 2; ++i) {
 		if (eword[i] != eword[len - i - 1]) { res = 0; }
 	}
-	cout << res;
-
-	return 0;
+	cout << res << endl;
+    return 0;
 }
